@@ -1,12 +1,17 @@
 let log = console.log
 
-let fn6 = () => {
+let fn6 = z => {
     log('llegue a fn6');
     setTimeout(()=>{
         log('dentro del setTimeout')
-    },0)
-    for(;;){
-        log('for.....')
+        throw new Error('Fallo')
+    },3000)
+    setTimeout(()=>{
+        log('dentro del setTimeout 2')
+        throw new Error('Fallo')
+    },5000)
+    if(z===1000){
+        throw new Error('En nuestra logica z no puede ser 3')
     }
 }
 
