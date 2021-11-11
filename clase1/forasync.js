@@ -1,4 +1,5 @@
 var asyncforloop = require('@arteysoft/asyncforloop');
+const {EOL} = require('os');
 
 
 /*
@@ -22,9 +23,14 @@ asyncforloop(100, (nroIteracion, next, abort) => {
 })*/
 fs = require('fs');
 
-asyncforloop(100, (nroIteracion, next, abort) => {
-    fs.appendFile('asyncforlooptexto.txt','Estoy en la iteracion' + nroIteracion);
-    next()
-}, (err) => {
-    fs.appendFile('asyncforlooptexto.txt','Termino la iteracion')
+asyncforloop(10, (nroIteracion, next, abort) => {
+    fs.appendFile('./asyncforlooptexto.txt',['Estoy en la iteracion ' + nroIteracion,EOL].join(''),'utf8',err=>{
+        if(err){
+            abort(err)
+            return
+        }
+        next()   
+    });
+}, err => {
+    console.log('termino de ejecutar')
 })
