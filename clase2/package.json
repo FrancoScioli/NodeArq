@@ -1,0 +1,14 @@
+{
+  "name": "clase2",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@arteysoft/asyncforloop": "^1.0.0",
+    "nodemon": "^2.0.15",
+    "underscore": "^1.13.1"
+  },
+  "scripts": {
+    "start": "./node_modules/.bin/nodemon server.js"
+  }
+}
