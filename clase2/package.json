@@ -5,6 +5,9 @@
   "license": "MIT",
   "dependencies": {
     "@arteysoft/asyncforloop": "^1.0.0",
+    "express-myconnection": "^1.0.4",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.3.3",
     "nodemon": "^2.0.15",
     "underscore": "^1.13.1"
   },
