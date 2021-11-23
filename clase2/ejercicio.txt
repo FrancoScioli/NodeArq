@@ -8,3 +8,6 @@ a los 10 segundos se debe insertar la cantidad de httpRequest en una tabla mysql
 de la siguiente forma
 
 insert httpRequests()
+
+insert into eventos(ts, concepto, valor) values(now(), 'httpRequests', 2)
+

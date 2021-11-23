@@ -3,8 +3,10 @@ let express = require('express');
 let {EOL} = require('os');
 let _ = require('underscore')
 let nodemon = require('nodemon')
+let insertarMySql = require('./insertarMySql')
+let incrementar = require('./countRequest')
 
-const mysql = require('mysql')
+let mysql = require('mysql')
 const myConnection  = require('express-myconnection')
 
 let app = express()
@@ -22,8 +24,11 @@ app.use(myConnection(mysql,{
 },'single'))
 
 app.get('/procesar', (req,res)=>{
+    incrementar();
     res.setHeader('Content-Type','application/json')
     res.status(200).send({res:'ok'})
+
+
 })
 
 
